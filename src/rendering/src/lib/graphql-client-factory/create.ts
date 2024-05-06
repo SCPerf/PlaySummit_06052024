@@ -13,14 +13,14 @@ import { JssConfig } from 'lib/config';
 export const createGraphQLClientFactory = (config: JssConfig) => {
   let clientConfig: GraphQLRequestClientFactoryConfig;
 
-  if (config.sitecoreEdgeContextId) {
-    clientConfig = {
-      endpoint: getEdgeProxyContentUrl(config.sitecoreEdgeContextId, config.sitecoreEdgeUrl),
-    };
-  } else if (config.graphQLEndpoint && config.sitecoreApiKey) {
+  if (config.graphQLEndpoint && config.sitecoreApiKey) {
     clientConfig = {
       endpoint: config.graphQLEndpoint,
       apiKey: config.sitecoreApiKey,
+    };
+  } else if (config.sitecoreEdgeContextId) {
+    clientConfig = {
+      endpoint: getEdgeProxyContentUrl(config.sitecoreEdgeContextId, config.sitecoreEdgeUrl),
     };
   } else {
     throw new Error(
