@@ -1,0 +1,88 @@
+﻿---
+ID: "e7662dd7-c2cf-4348-b529-b252e2bce45c"
+Parent: "bd374ea0-c775-4f78-bfd3-625dd36e5e26"
+Template: "e8ea30e4-9533-43bc-89e4-f3ff04da3843"
+Path: "/sitecore/content/PLAY/playwebsite/home/QueryPages/GraphQL5/p8/page-8"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{14F8DC42-04B7-47EB-ABAC-D4F857CD72FE}" />
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "page-8"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{053D4057-EB20-4C4F-8AB4-F84582042106}"
+              p:before="*"
+              s:id="{3836D951-BB14-43AC-9231-649B7F245DC5}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames=%7BE76E9DCE-0FF3-486F-818E-E6F7C8B53EBA%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1"
+              s:ph="headless-main" />
+            <r
+              uid="{A6D0CCF9-182F-4D7A-8952-EE86D84B22B2}"
+              p:after="r[@uid='{053D4057-EB20-4C4F-8AB4-F84582042106}']"
+              s:id="{D7D19677-079A-4932-9C43-315D4A421CA8}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=2"
+              s:ph="headless-main" />
+            <r
+              uid="{30353B62-FC9C-40D0-84C2-296ED15E590A}"
+              p:after="r[@uid='{A6D0CCF9-182F-4D7A-8952-EE86D84B22B2}']"
+              s:id="{71A9F326-C37A-45EC-B6DF-3DF4CED4A0BC}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=3"
+              s:ph="headless-main" />
+            <r
+              uid="{DE890900-3A85-41C0-8CFD-F1A894D2BC12}"
+              p:after="r[@uid='{30353B62-FC9C-40D0-84C2-296ED15E590A}']"
+              s:id="{B6FE253E-2655-45A5-8F57-BED4110C08FA}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=4"
+              s:ph="headless-main" />
+            <r
+              uid="{57A29976-677C-4BE9-804F-6B8AB6074F69}"
+              p:after="*[1=2]"
+              s:id="{3F76062D-6F33-43DB-9DE6-463938349A09}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=5"
+              s:ph="headless-main" />
+          </d>
+        </r>
+    - ID: "17707054-bc28-496c-925f-e614ba18f3e0"
+      Hint: Title
+      Value: NoGraphQL5Components
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240408T095604Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: NoGraphQL5Components
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Oleg Jytnik
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Oleg Jytnik
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f59907db-76c3-4207-94bf-a3b6a4cc7be0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\qe-perf-org@performancetest.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240408T160916Z
