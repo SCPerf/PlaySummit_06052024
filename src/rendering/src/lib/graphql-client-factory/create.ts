@@ -13,7 +13,7 @@ import { JssConfig } from 'lib/config';
 export const createGraphQLClientFactory = (config: JssConfig) => {
   let clientConfig: GraphQLRequestClientFactoryConfig;
 
-  if (process.env.DISABLE_ENVOY) {
+  if (Boolean(process.env.DISABLE_ENVOY)) {
     // Bypass Envoy
     clientConfig = {
       endpoint: config.graphQLEndpoint,
