@@ -13,20 +13,33 @@ import { JssConfig } from 'lib/config';
 export const createGraphQLClientFactory = (config: JssConfig) => {
   let clientConfig: GraphQLRequestClientFactoryConfig;
 
-  if (config.sitecoreEdgeContextId) {
-    clientConfig = {
-      endpoint: getEdgeProxyContentUrl(config.sitecoreEdgeContextId, config.sitecoreEdgeUrl),
-    };
-  } else if (config.graphQLEndpoint && config.sitecoreApiKey) {
+  if (process.env.DISABLE_ENVOY) {
+    // Bypass Envoy
     clientConfig = {
       endpoint: config.graphQLEndpoint,
       apiKey: config.sitecoreApiKey,
     };
   } else {
-    throw new Error(
-      'Please configure either your sitecoreEdgeContextId, or your graphQLEndpoint and sitecoreApiKey.'
-    );
+    // Use ContextId
+    clientConfig = {
+      endpoint: getEdgeProxyContentUrl(config.sitecoreEdgeContextId, config.sitecoreEdgeUrl),
+    };
   }
+
+  // if (config.sitecoreEdgeContextId) {
+  //   clientConfig = {
+  //     endpoint: getEdgeProxyContentUrl(config.sitecoreEdgeContextId, config.sitecoreEdgeUrl),
+  //   };
+  // } else if (config.graphQLEndpoint && config.sitecoreApiKey) {
+  //   clientConfig = {
+  //     endpoint: config.graphQLEndpoint,
+  //     apiKey: config.sitecoreApiKey,
+  //   };
+  // } else {
+  //   throw new Error(
+  //     'Please configure either your sitecoreEdgeContextId, or your graphQLEndpoint and sitecoreApiKey.'
+  //   );
+  // }
 
   return GraphQLRequestClient.createClientFactory(clientConfig);
 };
