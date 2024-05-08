@@ -1,2 +1,4 @@
 package.json
 src/temp/categoriesData.ts
+src/lib/middleware/plugins/personalize.ts
+src/lib/middleware/plugins/redirects.ts
