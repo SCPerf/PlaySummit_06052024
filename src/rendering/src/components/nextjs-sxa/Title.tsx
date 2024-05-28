@@ -88,7 +88,7 @@ export const Default = (props: TitleProps): JSX.Element => {
           <Text field={text} />
         ) : (
           // <Link field={link}>
-            <Text field={text} />
+          <Text field={text} />
           // </Link>
         )}
       </>
