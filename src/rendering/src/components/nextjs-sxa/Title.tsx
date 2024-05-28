@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  Link,
+  // Link,
   Text,
   useSitecoreContext,
-  LinkField,
+  // LinkField,
   TextField,
 } from '@sitecore-jss/sitecore-jss-nextjs';
 
@@ -66,18 +66,18 @@ export const Default = (props: TitleProps): JSX.Element => {
     value: datasource?.field?.jsonValue?.value,
     editable: datasource?.field?.jsonValue?.editable,
   };
-  const link: LinkField = {
-    value: {
-      href: datasource?.url?.path,
-      title: datasource?.field?.jsonValue?.value,
-      editable: true,
-    },
-  };
+  // const link: LinkField = {
+  //   value: {
+  //     href: datasource?.url?.path,
+  //     title: datasource?.field?.jsonValue?.value,
+  //     editable: true,
+  //   },
+  // };
   if (sitecoreContext.pageState !== 'normal') {
-    link.value.querystring = `sc_site=${datasource?.url?.siteName}`;
+    // link.value.querystring = `sc_site=${datasource?.url?.siteName}`;
     if (!text.value) {
       text.value = 'Title field';
-      link.value.href = '#';
+      // link.value.href = '#';
     }
   }
 
