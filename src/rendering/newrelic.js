@@ -9,11 +9,14 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['vercel'],
+  app_name: 'vercel',
   /**
    * Your New Relic license key.
    */
   license_key: 'd5f4faade3da8ed423a2277c9153cf4d886cNRAL',
+  distributed_tracing: {
+    enabled: true,
+  },
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
