@@ -39,6 +39,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@newrelic/next": "^0.9.0",
     "@next/bundle-analyzer": "^12.2.4",
     "@ordercloud/catalyst": "^1.2.0",
     "@ordercloud/portal-javascript-sdk": "0.0.1-beta.19",
@@ -145,7 +146,7 @@
     "lint": "npm-run-all --serial eslint stylelint",
     "END_CUSTOMIZATION_LINT": "",
     "bootstrap": "ts-node --require dotenv-flow/config --project tsconfig.scripts.json scripts/bootstrap.ts",
-    "build": "cross-env NODE_ENV=production npm-run-all --serial bootstrap next:build",
+    "build": "cross-env NODE_OPTIONS='-r @newrelic/next' NODE_ENV=production npm-run-all --serial bootstrap next:build",
     "DEMO_TEAM_CUSTOMIZATION_GRAPHQL_ENDPOINT": "Hardcode the GraphQL endpoint",
     "graphql:update": "cross-env GRAPH_QL_ENDPOINT=https://cm.xmcloudcm.localhost/sitecore/api/graph/edge ts-node --project tsconfig.scripts.json ./scripts/fetch-graphql-introspection-data.ts",
     "END_CUSTOMIZATION_GRAPHQL_ENDPOINT": "",
@@ -154,7 +155,7 @@
     "next:start": "next start",
     "scaffold": "ts-node --project tsconfig.scripts.json scripts/scaffold-component/index.ts",
     "start:connected": "cross-env NODE_ENV=development npm-run-all --serial bootstrap --parallel next:dev start:watch-components",
-    "start:production": "cross-env-shell NODE_ENV=production npm-run-all --serial bootstrap next:build next:start",
+    "start:production": "cross-env-shell NODE_OPTIONS='-r @newrelic/next' NODE_ENV=production npm-run-all --serial bootstrap next:build next:start",
     "start:watch-components": "ts-node --project tsconfig.scripts.json scripts/generate-component-builder/index.ts --watch"
   }
 }
