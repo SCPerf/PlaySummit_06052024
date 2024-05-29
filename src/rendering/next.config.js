@@ -3,6 +3,7 @@ const plugins = require('./src/temp/next-config-plugins') || {};
 
 const publicUrl = jssConfig.publicUrl;
 
+// New Relic
 const nrExternals = require('@newrelic/next/load-externals')
 
 /**
