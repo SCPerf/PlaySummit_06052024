@@ -1,6 +1,7 @@
 // TODO: Remove the below eslint disable when eslint-config-next is updated to support tsx files for that validation
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import newrelic from "newrelic";
+const newrelic = require("newrelic");
 import Document, {
   DocumentContext,
   DocumentInitialProps,
