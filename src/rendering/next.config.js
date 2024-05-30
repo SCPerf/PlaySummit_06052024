@@ -4,14 +4,14 @@ const plugins = require('./src/temp/next-config-plugins') || {};
 const publicUrl = jssConfig.publicUrl;
 
 // New Relic
-const nrExternals = require('@newrelic/next/load-externals')
+//const nrExternals = require('@newrelic/next/load-externals')
 
 /**
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
   // New Relic
-  webpack: nrExternals,
+  //webpack: nrExternals,
   
   // Set assetPrefix to our public URL
   assetPrefix: publicUrl,
