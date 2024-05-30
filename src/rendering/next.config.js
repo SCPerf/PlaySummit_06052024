@@ -11,7 +11,10 @@ const nrExternals = require('@newrelic/next/load-externals')
  */
 const nextConfig = {
   // New Relic
-  webpack: nrExternals,
+  webpack: (config) => {
+    nrExternals(config)
+    return config
+  },
   
   // Set assetPrefix to our public URL
   assetPrefix: publicUrl,
