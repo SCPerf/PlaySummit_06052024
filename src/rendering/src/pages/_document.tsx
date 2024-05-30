@@ -1,7 +1,14 @@
 // TODO: Remove the below eslint disable when eslint-config-next is updated to support tsx files for that validation
 // eslint-disable-next-line @next/next/no-document-import-in-page
-const newrelic = require("newrelic");
-import Document, { DocumentContext, DocumentInitialProps, Html, Head, Main, NextScript } from 'next/document';
+import newrelic from "newrelic";
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Html,
+  Head,
+  Main,
+  NextScript,
+} from "next/document";
 
 type NewRelicProps = {
   browserTimingHeader: string;
@@ -13,25 +20,23 @@ class MyDocument extends Document<NewRelicProps> {
  ): Promise<DocumentInitialProps & NewRelicProps> {
    const initialProps = await Document.getInitialProps(ctx);
  
-   // @ts-ignore
    if (newrelic?.agent && !newrelic?.agent?.collector.isConnected()) {
- 	 await new Promise((resolve) => {
-	   // @ts-ignore
-	   newrelic?.agent?.on('connected', resolve);
-	 });
+     await new Promise((resolve) => {
+       newrelic?.agent?.on('connected', resolve);
+     });
    }
 
    const browserTimingHeader = newrelic.getBrowserTimingHeader({
-	 hasToRemoveScriptWrapper: true,
-	 // @ts-ignore
-	 allowTransactionlessInjection: true,
+     hasToRemoveScriptWrapper: true,
+     allowTransactionlessInjection: true,
    });
- 
+
    return {
      ...initialProps,
      browserTimingHeader,
    };
  }
+ 
   render(): JSX.Element {
     return (
       <Html>
