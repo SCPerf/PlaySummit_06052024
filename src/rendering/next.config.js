@@ -9,13 +9,7 @@ const nrExternals = require('@newrelic/next/load-externals')
 /**
  * @type {import('next').NextConfig}
  */
-const nextConfig = {
-  // New Relic
-  webpack: (config) => {
-    nrExternals(config)
-    return config
-  },
-  
+const nextConfig = {  
   // Set assetPrefix to our public URL
   assetPrefix: publicUrl,
 
@@ -95,3 +89,13 @@ module.exports = () => {
   // Run the base config through any configured plugins
   return Object.values(plugins).reduce((acc, plugin) => plugin(acc), nextConfig);
 };
+
+module.exports = {
+  // In order for newrelic to effectively instrument a Next.js application,
+  // the modules that newrelic supports should not be mangled by webpack. Thus,
+  // we need to "externalize" all of the modules that newrelic supports.
+  webpack: (config) => {
+    nrExternals(config)
+    return config
+  }
+}
