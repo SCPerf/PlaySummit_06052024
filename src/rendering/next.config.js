@@ -5,7 +5,6 @@ const publicUrl = jssConfig.publicUrl;
 
 // New Relic
 const nrExternals = require('@newrelic/next/load-externals')
-const { merge } = require('webpack-merge');
 
 /**
  * @type {import('next').NextConfig}
@@ -86,16 +85,21 @@ const nextConfig = {
   },
 };
 	
-module.exports = () => [{
+module.exports = () => {
   // Run the base config through any configured plugins
-  Object.values(plugins).reduce((acc, plugin) => plugin(acc), nextConfig);
-}, {
-  // In order for newrelic to effectively instrument a Next.js application,
-  // the modules that newrelic supports should not be mangled by webpack. Thus,
-  // we need to "externalize" all of the modules that newrelic supports.
-  webpack: (config) => {
-    nrExternals(config)
-    return config
-  },
-},	
-];
+  return Object.values(plugins).reduce((acc, plugin) => plugin(acc), nextConfig);
+};
+	
+// module.exports = () => [{
+  // // Run the base config through any configured plugins
+  // Object.values(plugins).reduce((acc, plugin) => plugin(acc), nextConfig);
+// }, {
+  // // In order for newrelic to effectively instrument a Next.js application,
+  // // the modules that newrelic supports should not be mangled by webpack. Thus,
+  // // we need to "externalize" all of the modules that newrelic supports.
+  // webpack: (config) => {
+    // nrExternals(config)
+    // return config
+  // },
+// },	
+// ];
