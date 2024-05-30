@@ -1,6 +1,6 @@
 // TODO: Remove the below eslint disable when eslint-config-next is updated to support tsx files for that validation
 // eslint-disable-next-line @next/next/no-document-import-in-page
-import newrelic from "newrelic";
+const newrelic = require("newrelic");
 import Document, {
   DocumentContext,
   DocumentInitialProps,
@@ -20,9 +20,9 @@ class MyDocument extends Document<NewRelicProps> {
  ): Promise<DocumentInitialProps & NewRelicProps> {
    const initialProps = await Document.getInitialProps(ctx);
  
-   if (!newrelic.agent.collector.isConnected()) {
+   if (newrelic?.agent && !newrelic?.agent?.collector.isConnected()) {
      await new Promise((resolve) => {
-       newrelic.agent.on("connected", resolve);
+       newrelic?.agent?.on('connected', resolve);
      });
    }
 
