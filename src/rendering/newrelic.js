@@ -9,7 +9,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: 'vercel',
+  app_name: ['vercel'],
   /**
    * Your New Relic license key.
    */
@@ -24,6 +24,14 @@ exports.config = {
      * production applications.
      */
     level: 'info'
+  },
+  application_logging: {
+    forwarding: {
+      enabled: true,
+    },
+  },
+  browser_monitoring: {
+    enabled: true,
   },
   /**
    * When true, all request headers except for those listed in attributes.exclude
