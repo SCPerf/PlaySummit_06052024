@@ -5,6 +5,7 @@ const publicUrl = jssConfig.publicUrl;
 
 // New Relic
 const nrExternals = require('@newrelic/next/load-externals')
+const { merge } = require('webpack-merge');
 
 /**
  * @type {import('next').NextConfig}
