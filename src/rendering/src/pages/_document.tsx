@@ -36,7 +36,7 @@ class MyDocument extends Document<NewRelicProps> {
       ...initialProps,
       browserTimingHeader,
     };
- }
+  }
 
   render(): JSX.Element {
     return (
