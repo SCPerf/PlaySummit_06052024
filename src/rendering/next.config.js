@@ -96,7 +96,7 @@ const newrelicConfig = {
 };
 	
 module.exports = () => {
-  return merge(return Object.values(plugins).reduce((acc, plugin) => plugin(acc), nextConfig), newrelicConfig);
+  return merge(Object.values(plugins).reduce((acc, plugin) => plugin(acc), nextConfig), newrelicConfig);
   // Run the base config through any configured plugins
   // return Object.values(plugins).reduce((acc, plugin) => plugin(acc), nextConfig);
 };
