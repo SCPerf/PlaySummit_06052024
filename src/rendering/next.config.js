@@ -88,7 +88,7 @@ const nextConfig = {
 	
 module.exports = () => [{
   // Run the base config through any configured plugins
-  return Object.values(plugins).reduce((acc, plugin) => plugin(acc), nextConfig);
+  Object.values(plugins).reduce((acc, plugin) => plugin(acc), nextConfig);
 }, {
   // In order for newrelic to effectively instrument a Next.js application,
   // the modules that newrelic supports should not be mangled by webpack. Thus,
