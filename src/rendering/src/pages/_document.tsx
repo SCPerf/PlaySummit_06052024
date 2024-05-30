@@ -3,10 +3,14 @@
 const newrelic = require("newrelic");
 import Document, { DocumentContext, DocumentInitialProps, Html, Head, Main, NextScript } from 'next/document';
 
+type NewRelicProps = {
+  browserTimingHeader: string;
+};
+
 class MyDocument extends Document {
  static async getInitialProps(
    ctx: DocumentContext
- ): Promise<DocumentInitialProps> {
+ ): Promise<DocumentInitialProps & NewRelicProps> {
    const initialProps = await Document.getInitialProps(ctx);
  
    // @ts-ignore
