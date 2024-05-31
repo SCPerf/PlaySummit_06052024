@@ -1,7 +1,6 @@
 /**
  * This Layout is needed for Starter Kit.
  */
-require('@newrelic/next');
 import React, { useEffect } from 'react'; // DEMO TEAM CUSTOMIZATION - Log page views
 import Head from 'next/head';
 // DEMO TEAM CUSTOMIZATION - Add LayoutServicePageState

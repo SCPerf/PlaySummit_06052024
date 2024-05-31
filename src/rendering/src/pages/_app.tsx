@@ -1,3 +1,4 @@
+const newrelic = require('@newrelic/next');
 import type { AppProps } from 'next/app';
 import { I18nProvider } from 'next-localization';
 import { SitecorePageProps } from 'lib/page-props';
