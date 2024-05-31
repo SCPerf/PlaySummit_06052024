@@ -153,7 +153,7 @@
     "END_CUSTOMIZATION_GRAPHQL_ENDPOINT": "",
     "next:build": "next build",
     "next:dev": "cross-env NODE_OPTIONS='--inspect dotenv/config --experimental-loader newrelic/esm-loader.mjs -r @newrelic/next' next dev",
-    "next:start": "NODE_OPTIONS='dotenv/config --experimental-loader newrelic/esm-loader.mjs -r @newrelic/next' next start",
+    "next:start": "NODE_OPTIONS='-r @newrelic/next' next start",
     "scaffold": "ts-node --project tsconfig.scripts.json scripts/scaffold-component/index.ts",
     "start:connected": "cross-env NODE_OPTIONS='dotenv/config --experimental-loader newrelic/esm-loader.mjs -r @newrelic/next' NODE_ENV=development npm-run-all --serial bootstrap --parallel next:dev start:watch-components",
     "start:production": "cross-env-shell NODE_OPTIONS='dotenv/config --experimental-loader newrelic/esm-loader.mjs -r @newrelic/next' NODE_ENV=production npm-run-all --serial bootstrap next:build next:start",
