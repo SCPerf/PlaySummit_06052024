@@ -17,7 +17,7 @@ class GraphqlSitemapServicePlugin implements SitemapFetcherPlugin {
     this._graphqlSitemapService = new MultisiteGraphQLSitemapService({
       clientFactory,
       sites: [...new Set(siteResolver.sites.map((site: SiteInfo) => site.name))],
-      excludedPaths: ['/QueryPages/', '/ps1/', '/ps2/', '/ps3/', '/ps4/']
+      excludedPaths: ['/QueryPages/', '/ps1/', '/ps2/', '/ps3/', '/ps4/'],
     });
   }
 
