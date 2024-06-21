@@ -1,3 +1,4 @@
+require('@newrelic/next');
 import { SitecorePageProps } from 'lib/page-props';
 import { context } from 'src/lib/context';
 import config from 'temp/config';
